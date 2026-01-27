@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Álvaro Quintana | Robotics Software</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -9,168 +10,112 @@
 <body>
 
 <header>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <div class="nav-brand">
     <div class="brand-logo"></div>
     <span class="brand-name">Álvaro Quintana</span>
   </div>
-
- <nav class="nav-links">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact" class="nav-contact">Contact</a>
-</nav>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </nav>
 </header>
 
-
 <section id="home" class="hero">
+  <div class="hero-bg-glow"></div>
+
   <div class="hero-text">
     <h1>Hello.<br>I'm <span>Álvaro</span></h1>
     <h2>Robotics Software Engineer</h2>
     <div class="buttons">
-    <a href="#projects" class="cta">My projects</a>
-    <a href="https://github.com/aquintan4" class="cta">GitHub</a>
+      <a href="#projects" class="cta">My projects</a>
+      <a href="https://github.com/aquintan4" class="cta">GitHub</a>
+    </div>
+    
+    <div class="hero-robot-container">
+        <img src="assets/robotillo/hexa_saludo.png" alt="robot" id="hero-robot" />
+    </div>
   </div>
 
+  <div class="hero-visual">
+    <div class="hero-main-logo"></div>
   </div>
-  <img src="assets/robotillo/hexa_saludo.png" alt="profile" />
+
+  <div class="scroll-invite">
+    <p>Scroll to explore</p>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
   <div class="about-layout">
-    
-    <div class="about-text-column reveal">
+    <div class="about-text-column">
       <h2>About Me</h2>
-      
       <div class="philosophy-block">
-        <p class="lead">
-          I am a Robotics Software Engineer driven by one principle: 
-          <span class="hl">Reliability is non-negotiable.</span>
-        </p>
-        <p>
-          In robotics, a "patch" is often a delayed failure. When a foundation is flawed, 
-          <strong>I re-implement from the ground up.</strong> Starting over with clear logic is more efficient than debugging a weak base for weeks.
-        </p>
+        <p class="lead">I am a Robotics Software Engineer driven by one principle: <span class="hl">Reliability is non-negotiable.</span></p>
+        <p>In robotics, a "patch" is often a delayed failure. When a foundation is flawed, <strong>I re-implement from the ground up.</strong> Starting over with clear logic is more efficient than debugging a weak base for weeks.</p>
       </div>
-
       <div class="text-block">
         <h3><span class="icon">🏗️</span> The Sim2Real Reality</h3>
-        <p>
-          Working with hardware like <strong>Kobukis and UR5s</strong> taught me that the real world is messy. I architect <span class="hl">modular, highly parameterized systems</span> designed to handle noise, vibrations, and hardware wear. I don't just code for the ideal case; I architect for the edge case.
-        </p>
+        <p>Working with hardware like <strong>Kobukis and UR5s</strong> taught me that the real world is messy. I architect <span class="hl">modular, highly parameterized systems</span> designed to handle noise, vibrations, and hardware wear.</p>
       </div>
-
       <div class="text-block">
         <h3><span class="icon">⚙️</span> Technical Rigor & Control</h3>
-        <p>
-          I am a staunch advocate for <strong>C++ in production</strong> for the absolute control needed in high-performance <span class="hl">ROS 2 environments</span>. I use Python strategically for rapid prototyping, but only deploy battle-tested low-level foundations.
-        </p>
+        <p>I am a staunch advocate for <strong>C++ in production</strong> for the absolute control needed in high-performance <span class="hl">ROS 2 environments</span>.</p>
       </div>
-
       <div class="text-block">
         <h3><span class="icon">🚀</span> Product Vision</h3>
-        <p>
-          My goal is to bridge the gap between "curious prototypes" and <strong>mass-market commercial products</strong>, creating robots that are intelligent, reliable, and aesthetically sound.
-        </p>
+        <p>My goal is to bridge the gap between "curious prototypes" and <strong>mass-market commercial products</strong>.</p>
       </div>
-
       <a class="btn-cv" href="assets/cv/Alvaro_Quintana_CV.pdf" target="_blank">Download CV</a>
     </div>
 
-    <div class="about-image-column reveal-right">
-  <img src="assets/robotillo/hexa_llave.png" alt="Robotics Engineer" class="floating-wrench-robot">
-
-<div class="tickers-container">
-  
-  <h3 class="panel-title">Core Languages</h3>
-  <div class="ticker-wrap">
-    <div class="ticker-move row-1">
-      <div class="ticker-item"><i class="devicon-c-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-java-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-python-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-linux-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-bash-plain"></i></div>
-      
-      <div class="ticker-item"><i class="devicon-c-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-java-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-python-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-linux-plain"></i></div>
-      <div class="ticker-item"><i class="devicon-bash-plain"></i></div>
-
-</div>
-
+    <div class="about-visual-column">
+      <img src="assets/robotillo/hexa_llave.png" alt="Robotics Engineer" class="floating-wrench-robot">
+      <div class="tickers-container">
+        <h3 class="panel-title">Core Languages</h3>
+        <div class="ticker-wrap">
+          <div class="ticker-move row-1">
+            <div class="ticker-item"><i class="devicon-c-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-java-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-python-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-linux-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-bash-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-c-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-java-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-python-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-linux-plain"></i></div>
+            <div class="ticker-item"><i class="devicon-bash-plain"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="robotics-panel">
+        <h3 class="panel-title">Engineering Ecosystem</h3>
+        <div class="tools-grid">
+            <div class="tool-box" style="--delay: 0s"><img src="https://avatars.githubusercontent.com/u/3979232?s=280&v=4" alt="ROS 2"></div>
+            <div class="tool-box" style="--delay: 0.1s"><img src="https://d2vkrkwbbxbylk.cloudfront.net/sites/default/files/RAPID%20Logo.png" alt="RAPID"></div>
+            <div class="tool-box" style="--delay: 0.2s"><img src="https://raw.githubusercontent.com/ros-visualization/rviz/noetic-devel/images/splash.png" alt="RViz"></div>
+            <div class="tool-box" style="--delay: 0.3s"><img src="https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png" alt="Gazebo"></div>
+            <div class="tool-box" style="--delay: 0.4s"><img src="https://us1.discourse-cdn.com/flex022/uploads/ros/original/2X/7/781fa8ce870432b9682a95f855b315c454da87c7.png" alt="Nav2"></div>
+            <div class="tool-box pddl-box" style="--delay: 0.5s"><span class="pddl-text">PDDL</span></div>
+            <div class="tool-box" style="--delay: 0.6s"><img src="https://avatars.githubusercontent.com/u/44158496?v=4" alt="behavior tree"></div>
+            <div class="tool-box" style="--delay: 0.7s"><img src="https://moveit.ai/assets/images/blog_posts/moveit2_beta/moveit-2-logo-dark.png" alt="moveit2"></div>
+            <div class="tool-box" style="--delay: 0.8s"><img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" alt="opencv"></div>
+            <div class="tool-box" style="--delay: 0.9s"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="pytorch"></div>
+            <div class="tool-box" style="--delay: 1s"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/960px-Scikit_learn_logo_small.svg.png" alt="sklearn"></div>
+        </div>
+      </div>
     </div>
   </div>
-
-<div class="robotics-panel">
-  <h3 class="panel-title">Robotics Engineering Ecosystem</h3>
-  
-  <div class="tools-grid">
-    <div class="tool-box" style="--delay: 0s">
-      <img src="https://avatars.githubusercontent.com/u/3979232?s=280&v=4" alt="ROS 2">
-    </div>
-    
-    <div class="tool-box" style="--delay: 0.1s">
-      <img src="https://d2vkrkwbbxbylk.cloudfront.net/sites/default/files/RAPID%20Logo.png" alt="RAPID">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.2s">
-      <img src="https://raw.githubusercontent.com/ros-visualization/rviz/noetic-devel/images/splash.png" alt="RViz">
-    </div>
-    
-    <div class="tool-box" style="--delay: 0.3s">
-      <img src="https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png" alt="Gazebo">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://us1.discourse-cdn.com/flex022/uploads/ros/original/2X/7/781fa8ce870432b9682a95f855b315c454da87c7.png" alt="Nav2">
-    </div>
-    
-    <div class="tool-box" style="--delay: 0.5s">
-      <img src="https://vectorseek.com/wp-content/uploads/2023/12/FreeCAD-Logo-Vector.svg-1-1.png" alt="FreeCAD">
-    </div>
-
-    <div class="tool-box pddl-box" style="--delay: 0.6s">
-       <span class="pddl-text">PDDL</span>
-    </div>
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://avatars.githubusercontent.com/u/44158496?v=4" alt="behavior tree">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://moveit.ai/assets/images/blog_posts/moveit2_beta/moveit-2-logo-dark.png" alt="moveit2">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" alt="opencv">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="pytorch ">
-    </div>
-
-    <div class="tool-box" style="--delay: 0.4s">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/960px-Scikit_learn_logo_small.svg.png" alt="sckit learn ">
-    </div>
-
-  </div>
-</div>
-
-</div>
-
-  
-
-  </div> <div class="skills-placeholder reveal">
-    <p>[ Espacio reservado para la futura animación de Tecnologías / Stack ]</p>
-  </div>
-
 </section>
 
 <section id="projects">
@@ -180,20 +125,10 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p class="contact-subtitle">Open to collaboration and opportunities</p>
-
   <div class="contact-icons">
-    <a href="https://www.linkedin.com/in/aquintanc/" target="_blank" aria-label="LinkedIn">
-      <i class="icon-linkedin"></i>
-    </a>
-
-    <a href="mailto:aquintan@example.com" aria-label="Email">
-      <i class="icon-mail"></i>
-    </a>
-
-    <a href="https://github.com/aquintan4" target="_blank" aria-label="GitHub">
-      <i class="icon-github"></i>
-    </a>
+    <a href="https://www.linkedin.com/in/aquintanc/" target="_blank"><i class="icon-linkedin"></i></a>
+    <a href="mailto:aquintan@example.com"><i class="icon-mail"></i></a>
+    <a href="https://github.com/aquintan4" target="_blank"><i class="icon-github"></i></a>
   </div>
 </section>
 
@@ -201,13 +136,10 @@
   <div class="footer-inner">
     <span>© <span id="year"></span> Álvaro Quintana</span>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/aquintanc/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="https://github.com/aquintan4" target="_blank" rel="noreferrer">GitHub</a>
       <a href="#home">Back to top</a>
     </div>
   </div>
 </footer>
-
 
 <script src="projects.js"></script>
 <script src="script.js"></script>
