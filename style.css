@@ -39,27 +39,81 @@ header a {
 }
 
 .hero {
-  min-height: 70vh;
-  padding: calc(var(--header-h) + 24px) 60px 24px;  
+  /* Reducimos el padding de 260px a algo más razonable */
+  padding: calc(var(--header-h) + 40px) 60px 20px; 
+  
+  /* Reducimos la altura mínima para que no ocupe tanto espacio vertical */
+  min-height: 50vh; 
+  
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Cambiado de flex-start a center para mejor equilibrio */
   justify-content: space-between;
-  padding-top: 260px;
 }
 
+.hero-text h1 {
+  font-size: 4.5rem;    /* Tamaño de la fuente (puedes ajustarlo a tu gusto) */
+  line-height: 1.15;      /* Espaciado entre líneas para que no queden muy separadas */
+  font-weight: 700;      /* Grosor de la letra */
+  margin-bottom: 12px;   /* Espacio respecto a los botones */
+}
 
+.hero-text h2 {
+  font-size: 2.25rem;    /* Tamaño de la fuente (puedes ajustarlo a tu gusto) */
+  line-height: 1.1;      /* Espaciado entre líneas para que no queden muy separadas */
+  font-weight: 700;      /* Grosor de la letra */
+  margin-bottom: 24px;   /* Espacio respecto a los botones */
+}
+
+/* Opcional: Si quieres que el nombre "Álvaro" destaque aún más */
+.hero-text h1 span {
+  font-size: 5rem;       /* Un poco más grande que el resto */
+  display: inline-block; /* Permite que el tamaño afecte correctamente */
+}
+
+/* Estado base */
 .hero img {
   width: 300px;
   border-radius: 20px;
   position: relative;
   right: 400px;
+  transform-origin: center;
+  /* Animación de entrada al cargar la página */
+  animation: robot-wave 1.5s ease-in-out 3;
+  cursor: pointer;
+}
+
+/* Esta es la clase que añadiremos con JS al hacer clic */
+.wave-once {
+  /* Usamos !important para asegurarnos de que sobreescriba la animación inicial */
+  animation: robot-wave 1s ease-in-out 1 !important;
 }
 
 .hero span {
-  color: #FFC107;
+  /* Asegura que el span se comporte correctamente para la animación */
+  display: inline-block;
+  
+  /* Creamos un gradiente: dorado -> blanco brillante -> dorado */
+  background: linear-gradient(
+    90deg,
+    #FFC107 0%,
+    #fce7aa 45%,
+    #FFC107 100%
+  );
+  
+  /* Hacemos el fondo más ancho para que pueda moverse */
+  background-size: 200% auto;
+  
+  /* Recortamos el fondo a la forma del texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* Hacemos el texto transparente para ver el fondo */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+  /* Aplicamos la animación: nombre, duración, tipo, repetición */
+  animation: shine-effect 10s ease-in-out infinite;
 }
-
-
 
 .buttons {
   margin-top: 20px;
@@ -557,4 +611,265 @@ font-size: 18px;
     width: 52px;
     height: 52px;
   }
+}
+
+/* Definición de la animación de brillo */
+@keyframes shine-effect {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes robot-wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }  /* Gira hacia un lado */
+  50% { transform: rotate(-20deg); } /* Gira hacia el otro */
+  75% { transform: rotate(20deg); }  /* Vuelve a girar */
+  100% { transform: rotate(0deg); }  /* Se queda recto */
+}
+
+/* --- LAYOUT GENERAL --- */
+#about {
+  padding: 100px 60px;
+  position: relative;
+}
+
+.about-layout {
+  display: grid;
+  /* En móvil es 1 columna, en escritorio serán 2 (definido abajo) */
+  grid-template-columns: 1fr;
+  gap: 50px;
+  align-items: center; /* Centra verticalmente texto e imagen */
+}
+
+/* --- COLUMNA IZQUIERDA: TEXTO --- */
+.about-text-column h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFC107;
+}
+
+/* Párrafo destacado inicial */
+.philosophy-block .lead {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  border-left: 3px solid #FFC107;
+  padding-left: 15px;
+}
+
+/* Resaltado amarillo */
+.hl {
+  color: #FFC107;
+  font-weight: 600;
+}
+
+/* Bloques de texto normales */
+.text-block {
+  margin-bottom: 25px;
+}
+
+.text-block h3 {
+  font-size: 1.2rem;
+  color: #FFC107;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.text-block .icon {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.about-text-column p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d0d6dc;
+}
+
+/* Botón de CV */
+.btn-cv {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid #FFC107;
+  color: #FFC107;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover {
+  background: #FFC107;
+  color: #0e1621;
+}
+
+/* --- COLUMNA DERECHA: IMAGEN Y ANIMACIÓN --- */
+.about-image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Estado inicial: invisible y desplazado a la derecha */
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1.000); /* Salida suave */
+}
+
+/* Clase que añade JS al hacer scroll */
+.about-image-column.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Busca esto en tu CSS y cambia el valor de max-width */
+.floating-wrench-robot {
+  width: 100%;
+  /* max-width: 450px;  <-- VALOR ANTERIOR */
+  max-width: 350px; /* <-- NUEVO VALOR (más pequeño y nítido) */
+  height: auto;
+  /* Una vez que aparece, empieza a flotar */
+  animation: float-wrench-effect 4s ease-in-out infinite alternate;
+}
+
+/* Animación de flotación suave */
+@keyframes float-wrench-effect {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    /* Flota hacia arriba y gira un poquito la llave */
+    transform: translateY(-25px) rotate(3deg);
+  }
+}
+
+/* --- ESPACIO RESERVADO (PLACEHOLDER) --- */
+.skills-placeholder {
+  margin-top: 80px;
+  height: 250px; /* Altura fija para reservar el espacio */
+  background: rgba(255,255,255,0.02);
+  border: 2px dashed rgba(255, 193, 7, 0.3);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+}
+
+@media (min-width: 900px) {
+  .about-layout {
+    /* Ajustamos a 60/40 para que el texto tenga espacio y la imagen esté más cerca */
+    grid-template-columns: 60% 40%; 
+    gap: 20px; /* Reducimos el espacio entre columnas */
+  }
+  
+/* Ajuste de la columna derecha para que apile en vertical */
+.about-image-column {
+  display: flex;
+  flex-direction: column; /* Pone el robot arriba y los tickers abajo */
+  align-items: center;    /* Centra ambos horizontalmente */
+  justify-content: flex-start;
+  gap: 20px;              /* Espacio entre el robot y la primera tira */
+  opacity: 0;             /* Se activa con el scroll (clase .active) */
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* Cuando el JS añade la clase .active al scrollear */
+.about-image-column.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.floating-wrench-robot {
+  width: 100%;
+  max-width: 320px; /* Tamaño optimizado para nitidez */
+  height: auto;
+  animation: float-wrench-effect 4s ease-in-out infinite alternate;
+}
+
+/* Contenedor de las tiras */
+.tickers-container {
+  width: 100%;
+  max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre las 3 tiras */
+}
+
+/* Animación de las tiras (Diferentes tiempos para que no vayan iguales) */
+.ticker-move.row-1 { animation: ticker-loop 20s linear infinite; }
+.ticker-move.row-2 { animation: ticker-loop 25s linear infinite reverse; } /* Esta va al revés */
+.ticker-move.row-3 { animation: ticker-loop 18s linear infinite; }
+}
+
+/* Contenedor general de las tiras */
+.tickers-container {
+  width: 100%;
+  max-width: 400px; /* Ajustado al tamaño del robot */
+  margin-top: 30px;
+  overflow: hidden; /* Esconde lo que sale de los bordes */
+}
+
+.ticker-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #FFC107;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* El "túnel" por donde pasan los iconos */
+.ticker-wrap {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px 0;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+}
+
+/* El contenedor que se desplaza */
+.ticker-move {
+  display: flex;
+  width: max-content; /* Importante para que no se corte */
+  animation: ticker-loop 20s linear infinite;
+}
+
+/* Cada icono */
+.ticker-item {
+  padding: 0 20px;
+  font-size: 2rem;
+  color: #d0d6dc;
+  transition: color 0.3s ease;
+}
+
+.ticker-item:hover {
+  color: #FFC107;
+}
+
+/* ANIMACIÓN DEL BUCLE */
+@keyframes ticker-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se desplaza exactamente la mitad (la parte duplicada) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausar al pasar el ratón para poder verlos bien */
+.ticker-wrap:hover .ticker-move {
+  animation-play-state: paused;
 }
