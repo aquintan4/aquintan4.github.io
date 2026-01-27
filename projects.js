@@ -29,5 +29,14 @@ const projects = [
     image: "assets/projects/placeholder.png",
     url: "https://github.com/aquintan4",
     tags: ["ROS 2", "Navigation", "C++"]
+  },
+
+   {
+    title: "hola mamawebo",
+    description: "a ver como reacciona con + de 4 tarjetas",
+    image: "assets/projects/placeholder.png",
+    url: "https://github.com/aquintan4",
+    tags: ["ROS 2", "Navigation", "C++"]
   }
+
 ];
