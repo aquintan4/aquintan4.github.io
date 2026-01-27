@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Álvaro Quintana | Robotics Software</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="nav-brand">
+    <div class="brand-logo"></div>
+    <span class="brand-name">Álvaro Quintana</span>
+  </div>
+
+ <nav class="nav-links">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact" class="nav-contact">Contact</a>
+</nav>
+</header>
+
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hello.<br>I'm <span>Álvaro</span><br>Robotics Software Engineer</h1>
+    <div class="buttons">
+      <a href="#projects" class="btn">My projects</a>
+      <a href="https://github.com/aquintan4" class="btn outline">GitHub</a>
+    </div>
+  </div>
+  <img src="assets/batman_profile.png" alt="profile" />
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+
+  <div class="about-grid">
+    <!-- TEXTO -->
+    <div class="about-text">
+      <p>
+        I am a <strong>Robotics Software Engineering student</strong> with a strong focus on
+        <strong>ROS 2</strong>, <strong>C++</strong> and <strong>Python</strong>, interested in building
+        reliable and scalable software for autonomous robotic systems.
+      </p>
+
+      <p>
+        My main areas of interest include <strong>robot navigation</strong>,
+        <strong>control systems</strong>, sensor integration and real-world robotics,
+        with a strong emphasis on writing clean, maintainable and well-structured code.
+      </p>
+
+      <p>
+        I enjoy working across the full robotics software stack, from low-level logic and
+        system architecture to simulation, testing and integration in environments such as
+        <strong>Gazebo</strong> and <strong>Linux-based systems</strong>.
+      </p>
+
+      <p>
+        Through academic and personal projects, I continuously apply engineering principles
+        to solve practical problems and improve my skills as a robotics software engineer.
+      </p>
+      <div class="about-actions">
+  <a class="btn outline" href="assets/cv/Alvaro_Quintana_CV.pdf" target="_blank" rel="noreferrer">
+    Download CV
+  </a>
+</div>
+
+    </div>
+
+  <div class="about-skills">
+
+  <div class="skills-group">
+    <h3><span class="icon">▸</span> Core Technologies</h3>
+
+    <div class="skill-chips">
+      <span>ROS 2</span>
+      <span>C++</span>
+      <span>Python</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <h3><span class="icon">▸</span> Robotics & Systems</h3>
+    <div class="skill-chips">
+      <span>Navigation</span>
+      <span>SLAM</span>
+      <span>Control Systems</span>
+      <span>Sensor Integration</span>
+      <span>Gazebo</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <h3><span class="icon">▸</span> Tools & Environment</h3>
+    <div class="skill-chips">
+      <span>Linux</span>
+      <span>Git & GitHub</span>
+      <span>Docker</span>
+      <span>VS Code</span>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div id="projectsGrid" class="projects-grid"></div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="contact-subtitle">Open to collaboration and opportunities</p>
+
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/aquintanc/" target="_blank" aria-label="LinkedIn">
+      <i class="icon-linkedin"></i>
+    </a>
+
+    <a href="mailto:aquintan@example.com" aria-label="Email">
+      <i class="icon-mail"></i>
+    </a>
+
+    <a href="https://github.com/aquintan4" target="_blank" aria-label="GitHub">
+      <i class="icon-github"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Álvaro Quintana</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/aquintanc/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/aquintan4" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="#home">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="projects.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
