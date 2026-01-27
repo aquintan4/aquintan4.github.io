@@ -873,3 +873,99 @@ font-size: 18px;
 .ticker-wrap:hover .ticker-move {
   animation-play-state: paused;
 }
+
+.robotics-panel {
+  margin-top: 50px;
+  text-align: left; /* Alineado con tu texto */
+  max-width: 500px; 
+}
+
+.panel-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFC107;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: start;
+}
+
+.tool-box {
+  width: 115px;  /* Más grande */
+  height: 115px; /* Más grande */
+  background: #ffffff; /* FONDO BLANCO PARA LOS LOGOS */
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  animation: gentle-float 3.5s ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.tool-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Eliminamos filtros grises para ver colores originales */
+  filter: none; 
+}
+
+.svg-box svg {
+    width: 60px; 
+    height: 60px;
+}
+
+/* --- EFECTO HOVER --- */
+.tool-box:hover {
+  transform: translateY(-8px) scale(1.08);
+  border-color: #FFC107;
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4); /* Resplandor dorado */
+  z-index: 10;
+  animation-play-state: paused;
+}
+
+@keyframes gentle-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+/* Ajuste para tablets */
+@media (max-width: 900px) {
+  .robotics-panel { margin: 40px auto; }
+  .tools-grid { justify-items: center; }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 500px) {
+  .tool-box { width: 90px; height: 90px; padding: 10px; }
+  .svg-box svg { width: 45px; height: 45px; }
+}
+
+.pddl-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pddl-text {
+  font-family: 'Courier New', Courier, monospace; /* Fuente estilo código */
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+  /* Simula un logo técnico */
+  border: 2px solid #1a1a1a;
+  padding: 2px 6px;
+  line-height: 1;
+}
