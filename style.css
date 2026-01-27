@@ -238,23 +238,38 @@ section {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px; /* Aumentamos un poco el espacio para equilibrar el logo más grande */
+  cursor: pointer;
 }
 
 .brand-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #FFC107, #FFC107);
-  /*cuando este el logo hay que poner elbackground-image */
+  /* Subimos el tamaño. Ejemplo: 52px es un tamaño "hero" que llena bien el header */
+  width: 52px; 
+  height: 52px;
+  
+  /* Carga de imagen */
+  background-image: url('assets/logo/logo_amarillo.png');
+  
+  /* ESTO ES LO QUE RESPETA LA PROPORCIÓN: */
+  /* contain asegura que la imagen quepa entera sin estirarse ni cortarse */
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* Efectos visuales */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-brand:hover .brand-logo {
+  transform: scale(1.1); /* Crece un 10% al pasar el ratón */
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.6));
 }
 
 .brand-name {
-  font-size: 20px;
+  font-size: 22px; /* Subimos un pelín el nombre para que no se vea pequeño junto al logo */
   font-weight: 800;
   letter-spacing: 0.3px;
 }
-
 .nav-contact {
   margin-left: 20px;
   padding: 8px 14px;
