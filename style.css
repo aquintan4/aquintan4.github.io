@@ -185,3 +185,63 @@ header {
   .about-layout { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+.education-block {
+  margin-bottom: 30px !important;
+  max-width: 450px; /* Limitamos el ancho para que no cruce toda la pantalla */
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px; /* Más estrecho */
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.edu-card:hover {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.edu-logo-wrapper {
+  background: white;
+  min-width: 50px; /* Tamaño fijo cuadrado */
+  max-width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.edu-logo-wrapper img {
+  width: 90%; /* El logo ocupa casi todo el cuadrado blanco */
+  height: auto;
+  object-fit: contain;
+}
+
+.edu-info h4 {
+  color: white;
+  font-size: 0.95rem; /* Fuente más pequeña y elegante */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.edu-info p {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin: 2px 0;
+}
+
+.edu-status {
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
