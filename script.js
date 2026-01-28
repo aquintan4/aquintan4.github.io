@@ -2,7 +2,7 @@
  * Lógica Global del Portfolio - Álvaro Quintana
  */
 
-// --- 1. FUNCIONES GLOBALES (Accesibles desde los atributos 'onclick') ---
+// --- 1. FUNCIONES GLOBALES (Accesibles desde los onclick del HTML dinámico) ---
 
 /**
  * Expande o contrae la descripción detallada del proyecto.
@@ -20,8 +20,6 @@ function toggleProject(index) {
 
 /**
  * Activa o desactiva el modo reproductor de vídeo dentro de la tarjeta.
- * @param {number} index - Índice del proyecto.
- * @param {boolean} activate - True para activar controles y audio.
  */
 function toggleVideoPlayer(index, activate) {
     const card = document.getElementById(`project-${index}`);
@@ -43,8 +41,8 @@ function toggleVideoPlayer(index, activate) {
             video.muted = true;
             video.controls = false;
             video.pause();
-            video.currentTime = 0; // Reinicia el vídeo al cerrar
-            video.play();
+            video.currentTime = 0; // Reinicia el vídeo
+            video.play(); // Reinicia la reproducción para que vuelva la preview
         }
     }
 }
@@ -77,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.renderFilters = function() {
         if (!filterContainer || typeof projects === "undefined") return;
 
-        // Crea lista de categorías únicas
         const allCategories = ['All', ...new Set(projects.flatMap(p => p.categories || []))];
 
         filterContainer.innerHTML = allCategories.map(cat => `
@@ -90,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Dibuja las tarjetas de proyecto.
-     * Soporta detección de vídeos incluso con parámetros extra (como Dropbox ?raw=1).
+     * Soporta detección de vídeos incluso con parámetros de Dropbox.
      */
     window.renderProjects = function(filter = 'All') {
         if (!grid || typeof projects === "undefined") return;
@@ -101,15 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         grid.innerHTML = filtered.map((p, index) => {
             const hasPreview = p.preview && p.preview.trim() !== "";
-            // Detecta .mp4 incluso si el enlace tiene parámetros después
-            const isVideo = hasPreview && p.preview.toLowerCase().includes('.mp4');
+            // Detecta .mp4 o .webm incluso con parámetros después
+            const isVideo = hasPreview && (p.preview.toLowerCase().includes('.mp4') || p.preview.toLowerCase().includes('.webm'));
             
             return `
             <div class="project-card animate-in ${hasPreview ? 'has-preview' : ''}" id="project-${index}">
-                <div class=\"project-media\">
+                <div class="project-media">
                     ${isVideo ? `
                         <button class="play-overlay-btn" onclick="toggleVideoPlayer(${index}, true)" title="Play video">▶</button>
-                        <button class="close-player" onclick="toggleVideoPlayer(${index}, false)">✕ Close Player</button>
+                        <button class="close-player" onclick="toggleVideoPlayer(${index}, false)" title="Close Player">✕</button>
                     ` : ''}
                     
                     <img src="${p.image}" class="static-img" alt="${p.title}" onerror="this.src='assets/projects/placeholder.png'">
@@ -167,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (robotHero) {
         robotHero.addEventListener('click', () => {
             robotHero.style.animation = 'none';
-            void robotHero.offsetWidth; // Reinicia el ciclo de animación
+            void robotHero.offsetWidth; 
             robotHero.style.animation = 'robot-wave 1s ease-in-out 1';
         });
     }
