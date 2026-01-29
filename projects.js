@@ -124,7 +124,28 @@ const projects = [
   shortDesc: "Particle filter–based robot localization using odometry, laser ray tracing, and parallelized sensor simulation.",
   fullDescription: "Implemented a Monte Carlo Localization (MCL) system using particle filtering to estimate robot pose in a known map. Particles are initialized in continuous world coordinates and propagated using a probabilistic motion model derived from odometry. For sensor modeling, a custom DDA-based ray tracing algorithm simulates laser scans from each particle and compares them against real sensor data using an exponential likelihood function based on Manhattan distance. To achieve real-time performance, the implementation leverages multiprocessing across CPU cores, reduces the number of simulated laser beams, and applies step skipping in ray traversal. Weighted resampling with controlled noise refines the particle distribution over time, enabling robust convergence even with a limited number of particles. The system consistently converges to accurate pose estimates under computational constraints.",
   github: ""
-}
+},
+{
+  title: "Industrial Pallet Handling with ABB RobotStudio",
+  categories: ["Industrial Robotics"],
+  image: "assets/projects/industrial.png",
+  preview: "https://www.dropbox.com/scl/fi/rcaob9ugxbbn5nitclgqo/industrial.mp4?rlkey=4136pqz2z18w11wax0gf45om5&st=hd78htzi&raw=1",
+  shortDesc: "Design and programming of an ABB industrial robot cell for pallet handling using a custom end-effector and collision-safe trajectories.",
+  fullDescription: "Designed and programmed an industrial robot cell in ABB RobotStudio to perform pallet handling operations. The project includes custom end-effector (EOAT) design, definition of safe approach and retreat trajectories, and sequencing of pick-and-place operations using linear and joint motions. Collision avoidance, workspace constraints, and orientation control were considered to ensure smooth and repeatable execution. The setup reflects real-world industrial automation workflows through offline programming and validation.",
+  github: ""
+},
+{
+  title: "Low-Level Control and Kinematics of a 5-DoF Manipulator",
+  categories: ["Industrial Robotics"],
+  image: "assets/projects/dht.png",
+  preview: "https://www.dropbox.com/scl/fi/cx2ok06wjj932pnqz2a7q/bajo_nivel.mp4?rlkey=vt5e63sa1r9pq4993o4tjc935&st=0dsroe3o&raw=1",
+  shortDesc: "Joint-space and Cartesian control of a 5-DoF robot using analytical kinematics, inverse kinematics, and Jacobian-based differential control.",
+  fullDescription: "Developed a low-level control system for a 5-DoF robotic manipulator using MATLAB and Simulink. The project includes synchronized joint-space motion based on cruise velocity, analytical forward and inverse kinematics derived from Denavit–Hartenberg parameters, and Cartesian trajectory generation through linear interpolation. An inverse kinematics solver was implemented manually, handling multiple solutions and selecting the closest configuration to the previous state. Additionally, differential kinematics control was implemented using the Jacobian pseudoinverse to map Cartesian velocities into joint commands. The system enables smooth, coordinated, and stable robot motion in both joint and Cartesian spaces.",
+  github: ""
+},
+
+
+
 
 
 
