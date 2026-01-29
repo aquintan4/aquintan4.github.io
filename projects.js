@@ -1,23 +1,5 @@
 const projects = [
   {
-    title: "ROS 2 Navigation Lab",
-    categories: ["ROS 2", "Navigation", "C++"],
-    image: "assets/projects/nav_static.png",
-    preview: "https://www.dropbox.com/scl/fi/d2fmhvicaarnzbaxp98q6/resultado_p3.mp4?rlkey=6sfvnkcqr1b9f9w2v4311osy5&e=1&st=zfmcklaa&raw=1", // Puede ser .mp4 también
-    shortDesc: "Implementación de SLAM y navegación autónoma en entornos dinámicos.",
-    fullDescription: "En este proyecto desarrollé un sistema completo de navegación utilizando Nav2. Implementé un controlador de seguimiento de rutas personalizado en C++ para mejorar la precisión en pasillos estrechos y configuré filtros de partículas para la localización (AMCL). Se re-diseñó la arquitectura de nodos para reducir la latencia de procesamiento en un 20%.",
-    github: "https://github.com/aquintan4/nav-lab" 
-  },
-  {
-    title: "Hexapod Control",
-    categories: ["Kinematics", "Embedded", "Industrial"],
-    image: "assets/projects/placeholder.png",
-    preview: "",
-    shortDesc: "Control cinemático completo para un robot hexápodo de 18 DOF.",
-    fullDescription: "Desarrollo desde cero de la cinemática inversa para las 6 patas. El sistema permite diferentes tipos de marcha (tripod, wave) adaptables al terreno mediante sensores de presión en las puntas. Todo el código fue optimizado para ejecutarse en una Raspberry Pi 4 con comunicación distribuida vía ROS 2.",
-    github: "" // Si está vacío, el botón no aparecerá
-  },
-  {
     title: "BSA Coverage Path Planning",
     categories: ["Service Robotics"],
     image: "assets/projects/bsa.png",
@@ -144,11 +126,46 @@ const projects = [
   github: ""
 },
 
+{
+  title: "Visual Odometry and Scene Classification for Indoor Drone Navigation",
+  categories: ["Computer Vision"],
+  image: "assets/projects/visualodom.png",
+  preview: "https://www.dropbox.com/scl/fi/z5rtn1qbq9gntmkwmfn6p/dron_fpv_v2-2026-01-29_17.43.51.mp4?rlkey=znxlqqc9h2vgin7l4irtg7mob&st=2s6l026v&raw=1",
+  shortDesc: "Monocular visual odometry using optical flow and essential matrix estimation combined with object-based room classification.",
+  fullDescription: "Developed a visual odometry system for an FPV inspection drone using monocular camera input. The system tracks keypoints with Lucas–Kanade optical flow, estimates camera motion through essential matrix computation and RANSAC filtering, and recovers relative pose via triangulation. Successive poses are composed in SE(3) space and smoothed using exponential filtering and quaternion SLERP. The estimated pose is published through ROS2 TF for integration with the navigation stack. Additionally, detected objects are encoded into a feature vector and classified using a trained SVM to infer the current room type, enabling semantic localization in indoor environments.",
+  github: ""
+},
 
+{
+  title: "Arroz Con Ternera — Multi-Robot Reception and Guidance System with HRI (ROS 2)",
+  categories: [
+    "Robotics",
+    "ROS 2",
+    "Human-Robot Interaction",
+    "Multi-Robot Systems",
+    "Autonomous Navigation",
+    "Behavior Trees",
+    "Computer Vision"
+  ],
+    title: "Distributed Multi-Robot HRI and Navigation System",
+    categories: [
+      "ROS 2",
+    ],
+    image: "assets/projects/act.png",
+    preview: "https://www.dropbox.com/scl/fi/l7pbv3pmkdzfx5i6yvsfp/arroz_con_ternera.mp4?rlkey=1mjbd0jkbbhf6bc8z37spht0n&st=ax8fsmf0&raw=1",
+    shortDesc:
+      "Multi-robot reception and guidance system deployed on real Kobuki platforms using ROS 2, Behavior Trees, QR-based identification, and distributed coordination.",
+  fullDescription:
+    "Multi-robot system developed on real Kobuki platforms using ROS 2 and a distributed architecture based on isolated ROS_DOMAIN_IDs and selective topic bridging.\n\n" +
 
+    "Robot behaviors are modeled using Behavior Trees, enabling modular interaction, navigation, and fault handling through retries and fallbacks.\n\n" +
 
+    "The receptionist robot handles QR-based identification and voice interaction (Dialog-Flow), while guide robots perform autonomous navigation using the ROS 2 Navigation stack and user-following supervision (LiDAR).\n\n" +
 
+    "Each robot runs its own autonomy stack and exchanges only high-level coordination data, allowing scalable and robust multi-robot operation.\n\n" +
 
+    "My main contribution focused on the HRI layer, including QR processing, dialogue integration, and expression control, embedded within the global behavior architecture.",
 
-    
+    github: ""
+  }
 ];
