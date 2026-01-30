@@ -1075,3 +1075,172 @@ section > h2 {
   color: white;
 }
 
+
+
+/* =========================
+   Dynamic subtle background blobs
+   ========================= */
+body{
+  position: relative;
+}
+
+body::before,
+body::after{
+  content:"";
+  position: fixed;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 35% at 20% 25%, rgba(255,193,7,0.07) 0%, rgba(255,193,7,0.0) 60%),
+    radial-gradient(45% 40% at 70% 20%, rgba(80,140,255,0.10) 0%, rgba(80,140,255,0.0) 60%),
+    radial-gradient(55% 45% at 60% 75%, rgba(20,30,45,0.95) 0%, rgba(20,30,45,0.0) 70%);
+  filter: blur(18px);
+  opacity: 0.9;
+  transform: translate3d(0,0,0);
+  animation: bg-drift 46s ease-in-out infinite alternate;
+}
+
+body::after{
+  z-index: -3;
+  opacity: 0.75;
+  filter: blur(28px);
+  background:
+    radial-gradient(45% 40% at 15% 70%, rgba(255,193,7,0.05) 0%, rgba(255,193,7,0.0) 62%),
+    radial-gradient(40% 35% at 80% 55%, rgba(60,120,230,0.08) 0%, rgba(60,120,230,0.0) 62%),
+    radial-gradient(55% 45% at 45% 35%, rgba(10,14,20,0.95) 0%, rgba(10,14,20,0.0) 70%);
+  animation-duration: 62s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes bg-drift{
+  0%   { transform: translate3d(-1%, -2%, 0) scale(1.02); }
+  50%  { transform: translate3d(2%, 1%, 0) scale(1.04); }
+  100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::before, body::after{ animation: none; }
+}
+
+
+/* =========================
+   Header micro-interactions
+   ========================= */
+.nav-brand{
+  cursor: pointer;
+}
+
+.nav-brand:hover .brand-logo{
+  filter: drop-shadow(0 0 14px rgba(255,193,7,0.35));
+  transform: translateY(-1px) scale(1.03);
+  transition: 0.25s ease;
+}
+
+.nav-links a{
+  position: relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: rgba(255,193,7,0.85);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+
+/* =========================
+   Section headings consistency
+   ========================= */
+section > h2{
+  color: var(--primary);
+}
+
+/* Ensure About heading matches the global rule */
+.about-text-column h2{
+  color: var(--primary);
+  font-size: clamp(2.4rem, 3vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 22px;
+}
+
+
+/* =========================
+   About: Pause-on-hover + highlight
+   ========================= */
+.ticker-wrap:hover .ticker-move{
+  animation-play-state: paused;
+}
+
+.ticker-item{
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
+  cursor: default;
+}
+
+.ticker-item:hover{
+  color: var(--primary);
+  filter: drop-shadow(0 0 10px rgba(255,193,7,0.35));
+  transform: translateY(-2px) scale(1.08);
+}
+
+.tools-grid:hover .tool-box{
+  animation-play-state: paused;
+}
+
+.tool-box{
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tool-box:hover{
+  border-color: rgba(255,193,7,0.85);
+  box-shadow: 0 0 18px rgba(255,193,7,0.18);
+  transform: translateY(-6px);
+  animation-play-state: paused;
+}
+
+
+/* =========================
+   Mobile navigation toggle
+   ========================= */
+.nav-toggle{
+  display:none;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.nav-toggle span{
+  display:block;
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  margin: 4px 0;
+}
+
+@media (max-width: 820px){
+  .nav-toggle{ display:block; }
+  .nav-links{
+    position: absolute;
+    top: var(--header-h);
+    right: 0;
+    left: 0;
+    background: rgba(11,18,26,0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 14px 20px 18px;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .nav-links.open{ display:flex; }
+}

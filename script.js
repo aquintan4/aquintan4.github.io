@@ -488,4 +488,55 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeBlogModal();
   });
+
+  // ------------------------------
+  // Hero interactions (logo, robot, scroll invite, mobile nav)
+  // ------------------------------
+
+  // 1) Click on top-left brand => go to top / home section
+  // (HTML is already an <a href="#home">, but we ensure smooth behavior + closes mobile menu)
+  const brandLink = document.querySelector(".nav-brand");
+  if (brandLink) {
+    brandLink.addEventListener("click", () => {
+      const nav = document.getElementById("primary-navigation");
+      if (nav) nav.classList.remove("open");
+      const btn = document.querySelector(".nav-toggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.getElementById("primary-navigation");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  // 2) Robot: replay wave on click
+  const heroRobot = document.getElementById("hero-robot");
+  if (heroRobot) {
+    const replayWave = () => {
+      // Restart CSS animation reliably
+      heroRobot.style.animation = "none";
+      // Force reflow
+      void heroRobot.offsetHeight;
+      heroRobot.style.animation = "robot-wave 1.5s ease-in-out 3";
+    };
+    heroRobot.addEventListener("click", replayWave);
+  }
+
+  // 6) "Scroll to explore" disappears after user scrolls a bit
+  const scrollInvite = document.querySelector(".scroll-invite");
+  const updateScrollInvite = () => {
+    if (!scrollInvite) return;
+    const hide = window.scrollY > 80;
+    scrollInvite.classList.toggle("hidden", hide);
+  };
+  window.addEventListener("scroll", updateScrollInvite, { passive: true });
+  updateScrollInvite();
+
+
 });
