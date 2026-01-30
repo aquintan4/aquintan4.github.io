@@ -12,6 +12,7 @@
 
 <body>
 
+<div class="grain" aria-hidden="true"></div>
 <!-- ================= HEADER ================= -->
 
 <header>
@@ -77,6 +78,8 @@
 
 <!-- ================= ABOUT ================= -->
 
+<!-- ================= ABOUT ================= -->
+
 <section id="about">
 
   <div class="about-layout">
@@ -90,25 +93,44 @@
         <span class="hl">Reliability is non-negotiable.</span>
       </p>
 
+      <p>
+        I build robotic systems with a focus on robustness, clarity, and long-term maintainability.
+        In real-world robotics, quick fixes often become delayed failures, so I prioritize clean
+        architectures and reproducible behavior over short-term solutions.
+      </p>
+
       <div class="text-block">
-        <h3>🏗️ Sim2Real</h3>
+        <h3>🏗️ Bridging Sim2Real</h3>
         <p>
-          Experience with Kobuki, UR5, and real robots taught me that the world is messy.
-          I design modular systems that survive noise and wear.
+          Working with real hardware such as Kobuki platforms and UR5 manipulators taught me that
+          noise, drift, vibration, and wear are unavoidable. I design modular and highly
+          parameterized systems that remain stable under imperfect conditions.
         </p>
       </div>
 
       <div class="text-block">
-        <h3>⚙️ Technical Rigor</h3>
+        <h3>⚙️ Technical Rigor & Control</h3>
         <p>
-          Strong advocate of C++ and ROS 2 for production environments.
+          I rely on C++ and ROS 2 for production-grade systems, where performance, memory control,
+          and determinism are critical. Python is used strategically for rapid prototyping and
+          high-level orchestration once the foundations are validated.
         </p>
       </div>
 
       <div class="text-block">
-        <h3>🚀 Product Vision</h3>
+        <h3>🧩 Clean Architecture</h3>
         <p>
-          From prototypes to real commercial robotics systems.
+          I value readable, maintainable software with predictable interfaces and minimal
+          complexity. My goal is to write code that any engineer can understand, extend, and trust.
+        </p>
+      </div>
+
+      <div class="text-block">
+        <h3>🚀 From Research to Product</h3>
+        <p>
+          Beyond experimentation, I am interested in turning prototypes into reliable,
+          scalable products. I am especially drawn to service robotics and systems designed
+          for long-term deployment in real environments.
         </p>
       </div>
 
@@ -119,7 +141,7 @@
         <div class="edu-card">
 
           <div class="edu-logo-wrapper">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/URJC_logo.svg/1280px-URJC_logo.svg.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/URJC_logo.svg/1280px-URJC_logo.svg.png" alt="URJC">
           </div>
 
           <div class="edu-info">
@@ -157,6 +179,7 @@
             <div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
             <div class="ticker-item"><i class="devicon-linux-plain"></i></div>
             <div class="ticker-item"><i class="devicon-bash-plain"></i></div>
+
             <div class="ticker-item"><i class="devicon-c-plain"></i></div>
             <div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
             <div class="ticker-item"><i class="devicon-java-plain"></i></div>
@@ -171,18 +194,53 @@
 
       <div class="robotics-panel">
         <h3 class="panel-title">Engineering Ecosystem</h3>
+
         <div class="tools-grid">
-          <div class="tool-box" style="--delay: 0s"><img src="https://avatars.githubusercontent.com/u/3979232?s=280&v=4" alt="ROS 2"></div>
-          <div class="tool-box" style="--delay: 0.1s"><img src="https://d2vkrkwbbxbylk.cloudfront.net/sites/default/files/RAPID%20Logo.png" alt="RAPID"></div>
-          <div class="tool-box" style="--delay: 0.2s"><img src="https://raw.githubusercontent.com/ros-visualization/rviz/noetic-devel/images/splash.png" alt="RViz"></div>
-          <div class="tool-box" style="--delay: 0.3s"><img src="https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png" alt="Gazebo"></div>
-          <div class="tool-box" style="--delay: 0.4s"><img src="https://us1.discourse-cdn.com/flex022/uploads/ros/original/2X/7/781fa8ce870432b9682a95f855b315c454da87c7.png" alt="Nav2"></div>
-          <div class="tool-box pddl-box" style="--delay: 0.5s"><span class="pddl-text">PDDL</span></div>
-          <div class="tool-box" style="--delay: 0.6s"><img src="https://avatars.githubusercontent.com/u/44158496?v=4" alt="Behavior Trees"></div>
-          <div class="tool-box" style="--delay: 0.7s"><img src="https://moveit.ai/assets/images/blog_posts/moveit2_beta/moveit-2-logo-dark.png" alt="MoveIt 2"></div>
-          <div class="tool-box" style="--delay: 0.8s"><img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" alt="OpenCV"></div>
-          <div class="tool-box" style="--delay: 0.9s"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="PyTorch"></div>
-          <div class="tool-box" style="--delay: 1s"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/960px-Scikit_learn_logo_small.svg.png" alt="Scikit-learn"></div>
+
+          <div class="tool-box" style="--delay: 0s">
+            <img src="https://avatars.githubusercontent.com/u/3979232?s=280&v=4" alt="ROS 2">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.1s">
+            <img src="https://d2vkrkwbbxbylk.cloudfront.net/sites/default/files/RAPID%20Logo.png" alt="RAPID">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.2s">
+            <img src="https://raw.githubusercontent.com/ros-visualization/rviz/noetic-devel/images/splash.png" alt="RViz">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.3s">
+            <img src="https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png" alt="Gazebo">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.4s">
+            <img src="https://us1.discourse-cdn.com/flex022/uploads/ros/original/2X/7/781fa8ce870432b9682a95f855b315c454da87c7.png" alt="Nav2">
+          </div>
+
+          <div class="tool-box pddl-box" style="--delay: 0.5s">
+            <span class="pddl-text">PDDL</span>
+          </div>
+
+          <div class="tool-box" style="--delay: 0.6s">
+            <img src="https://avatars.githubusercontent.com/u/44158496?v=4" alt="Behavior Trees">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.7s">
+            <img src="https://moveit.ai/assets/images/blog_posts/moveit2_beta/moveit-2-logo-dark.png" alt="MoveIt 2">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.8s">
+            <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" alt="OpenCV">
+          </div>
+
+          <div class="tool-box" style="--delay: 0.9s">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="PyTorch">
+          </div>
+
+          <div class="tool-box" style="--delay: 1s">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/960px-Scikit_learn_logo_small.svg.png" alt="Scikit-learn">
+          </div>
+
         </div>
       </div>
 
@@ -191,6 +249,7 @@
   </div>
 
 </section>
+
 
 <!-- ================= PROJECTS ================= -->
 

@@ -1076,54 +1076,6 @@ section > h2 {
 }
 
 
-
-/* =========================
-   Dynamic subtle background blobs
-   ========================= */
-body{
-  position: relative;
-}
-
-body::before,
-body::after{
-  content:"";
-  position: fixed;
-  inset: -20%;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(40% 35% at 20% 25%, rgba(255,193,7,0.07) 0%, rgba(255,193,7,0.0) 60%),
-    radial-gradient(45% 40% at 70% 20%, rgba(80,140,255,0.10) 0%, rgba(80,140,255,0.0) 60%),
-    radial-gradient(55% 45% at 60% 75%, rgba(20,30,45,0.95) 0%, rgba(20,30,45,0.0) 70%);
-  filter: blur(18px);
-  opacity: 0.9;
-  transform: translate3d(0,0,0);
-  animation: bg-drift 46s ease-in-out infinite alternate;
-}
-
-body::after{
-  z-index: -3;
-  opacity: 0.75;
-  filter: blur(28px);
-  background:
-    radial-gradient(45% 40% at 15% 70%, rgba(255,193,7,0.05) 0%, rgba(255,193,7,0.0) 62%),
-    radial-gradient(40% 35% at 80% 55%, rgba(60,120,230,0.08) 0%, rgba(60,120,230,0.0) 62%),
-    radial-gradient(55% 45% at 45% 35%, rgba(10,14,20,0.95) 0%, rgba(10,14,20,0.0) 70%);
-  animation-duration: 62s;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes bg-drift{
-  0%   { transform: translate3d(-1%, -2%, 0) scale(1.02); }
-  50%  { transform: translate3d(2%, 1%, 0) scale(1.04); }
-  100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
-}
-
-@media (prefers-reduced-motion: reduce){
-  body::before, body::after{ animation: none; }
-}
-
-
 /* =========================
    Header micro-interactions
    ========================= */
