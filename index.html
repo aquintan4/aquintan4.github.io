@@ -1,150 +1,264 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Álvaro Quintana | Robotics Software</title>
-<link href="style.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Álvaro Quintana | Robotics Software Engineer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
+
 <header>
-<div class="nav-brand">
-<div class="brand-logo"></div>
-<span class="brand-name">Álvaro Quintana</span>
-</div>
-<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" class="nav-toggle"><span></span><span></span><span></span></button><nav class="nav-links" id="primary-navigation">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a class="nav-contact" href="#contact">Contact</a>
-</nav>
+
+  <div class="nav-brand">
+    <div class="brand-logo"></div>
+    <span class="brand-name">Álvaro Quintana</span>
+  </div>
+
+  <button class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav-links" id="primary-navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </nav>
+
 </header>
-<section class="hero" id="home">
-<div class="hero-bg-glow"></div>
-<div class="hero-text">
-<h1>Hello.<br/>I'm <span>Álvaro</span></h1>
-<h2>Robotics Software Engineer</h2>
-<div class="buttons">
-<a class="cta" href="#projects">My projects</a>
-<a class="cta" href="https://github.com/aquintan4">GitHub</a>
-</div>
-<div class="hero-robot-container">
-<img alt="robot" id="hero-robot" src="assets/robotillo/hexa_saludo.png"/>
-</div>
-</div>
-<div class="hero-visual">
-<div class="hero-main-logo"></div>
-</div>
-<div class="scroll-invite">
-<p>Scroll to explore</p>
-<div class="mouse">
-<div class="wheel"></div>
-</div>
-</div>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+  <div class="hero-bg-glow"></div>
+
+  <div class="hero-text">
+
+    <h1>Hello.<br>I'm <span>Álvaro</span></h1>
+    <h2>Robotics Software Engineer</h2>
+
+    <div class="buttons">
+      <a href="#projects" class="cta">My Projects</a>
+      <a href="https://github.com/aquintan4" target="_blank" class="cta">GitHub</a>
+    </div>
+
+    <div class="hero-robot-container">
+      <img src="assets/robotillo/hexa_saludo.png" id="hero-robot" alt="Robot">
+    </div>
+
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-main-logo"></div>
+  </div>
+
+  <div class="scroll-invite">
+    <p>Scroll to explore</p>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+
 </section>
+
+<!-- ================= ABOUT ================= -->
+
 <section id="about">
-<div class="about-layout">
-<div class="about-text-column">
-<h2>About Me</h2>
-<div class="philosophy-block">
-<p class="lead">I am a Robotics Software Engineer driven by one principle: <span class="hl">Reliability is non-negotiable.</span></p>
-<p>In robotics, a "patch" is often a delayed failure. When a foundation is flawed, <strong>I re-implement from the ground up.</strong> Starting over with clear logic is more efficient than debugging a weak base for weeks.<br/></p>
-</div>
-<div class="text-block">
-<h3><span class="icon">🏗️</span> The Sim2Real Reality</h3>
-<p>Working with hardware like <strong>Kobukis and UR5s</strong> taught me that the real world is messy. I architect <span class="hl">modular, highly parameterized systems</span> designed to handle noise, vibrations, and hardware wear.</p>
-</div>
-<div class="text-block">
-<h3><span class="icon">⚙️</span> Technical Rigor &amp; Control</h3>
-<p>I am a staunch advocate for <strong>C++ in production</strong> for the absolute control needed in high-performance <span class="hl">ROS 2 environments</span>.</p>
-</div>
-<div class="text-block">
-<h3><span class="icon">🚀</span> Product Vision</h3>
-<p>My goal is to bridge the gap between "curious prototypes" and <strong>mass-market commercial products</strong>.</p>
-</div>
-<div class="text-block education-block">
-<h3><span class="icon">🎓</span> Education</h3>
-<div class="edu-card">
-<div class="edu-logo-wrapper">
-<img alt="URJC Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/URJC_logo.svg/1280px-URJC_logo.svg.png"/>
-</div>
-<div class="edu-info">
-<h4>Grado en Ingeniería Robótica Software</h4>
-<p>Universidad Rey Juan Carlos (URJC)</p>
-<span class="edu-status">2022-2026</span>
-</div>
-</div>
-</div>
-<a class="btn-cv" href="assets/cv/Alvaro_Quintana_CV.pdf" target="_blank">Download CV</a>
-</div>
-<div class="about-visual-column">
-<img alt="Robotics Engineer" class="floating-wrench-robot" src="assets/robotillo/hexa_llave.png"/>
-<div class="tickers-container">
-<h3 class="panel-title">Core Languages</h3>
-<div class="ticker-wrap">
-<div class="ticker-move row-1">
-<div class="ticker-item"><i class="devicon-c-plain"></i></div>
-<div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
-<div class="ticker-item"><i class="devicon-java-plain"></i></div>
-<div class="ticker-item"><i class="devicon-python-plain"></i></div>
-<div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
-<div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
-<div class="ticker-item"><i class="devicon-linux-plain"></i></div>
-<div class="ticker-item"><i class="devicon-bash-plain"></i></div>
-<div class="ticker-item"><i class="devicon-c-plain"></i></div>
-<div class="ticker-item"><i class="devicon-cplusplus-plain"></i></div>
-<div class="ticker-item"><i class="devicon-java-plain"></i></div>
-<div class="ticker-item"><i class="devicon-python-plain"></i></div>
-<div class="ticker-item"><i class="devicon-arduino-plain"></i></div>
-<div class="ticker-item"><i class="devicon-matlab-plain"></i></div>
-<div class="ticker-item"><i class="devicon-linux-plain"></i></div>
-<div class="ticker-item"><i class="devicon-bash-plain"></i></div>
-</div>
-</div>
-</div>
-<div class="robotics-panel">
-<h3 class="panel-title">Engineering Ecosystem</h3>
-<div class="tools-grid">
-<div class="tool-box" style="--delay: 0s"><img alt="ROS 2" src="https://avatars.githubusercontent.com/u/3979232?s=280&amp;v=4"/></div>
-<div class="tool-box" style="--delay: 0.1s"><img alt="RAPID" src="https://d2vkrkwbbxbylk.cloudfront.net/sites/default/files/RAPID%20Logo.png"/></div>
-<div class="tool-box" style="--delay: 0.2s"><img alt="RViz" src="https://raw.githubusercontent.com/ros-visualization/rviz/noetic-devel/images/splash.png"/></div>
-<div class="tool-box" style="--delay: 0.3s"><img alt="Gazebo" src="https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png"/></div>
-<div class="tool-box" style="--delay: 0.4s"><img alt="Nav2" src="https://us1.discourse-cdn.com/flex022/uploads/ros/original/2X/7/781fa8ce870432b9682a95f855b315c454da87c7.png"/></div>
-<div class="tool-box pddl-box" style="--delay: 0.5s"><span class="pddl-text">PDDL</span></div>
-<div class="tool-box" style="--delay: 0.6s"><img alt="behavior tree" src="https://avatars.githubusercontent.com/u/44158496?v=4"/></div>
-<div class="tool-box" style="--delay: 0.7s"><img alt="moveit2" src="https://moveit.ai/assets/images/blog_posts/moveit2_beta/moveit-2-logo-dark.png"/></div>
-<div class="tool-box" style="--delay: 0.8s"><img alt="opencv" src="https://opencv.org/wp-content/uploads/2022/05/logo.png"/></div>
-<div class="tool-box" style="--delay: 0.9s"><img alt="pytorch" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"/></div>
-<div class="tool-box" style="--delay: 1s"><img alt="sklearn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/960px-Scikit_learn_logo_small.svg.png"/></div>
-</div>
-</div>
-</div>
-</div>
+
+  <div class="about-layout">
+
+    <div class="about-text-column">
+
+      <h2>About Me</h2>
+
+      <p class="lead">
+        I am a Robotics Software Engineer driven by one principle:
+        <span class="hl">Reliability is non-negotiable.</span>
+      </p>
+
+      <div class="text-block">
+        <h3>🏗️ Sim2Real</h3>
+        <p>
+          Experience with Kobuki, UR5, and real robots taught me that the world is messy.
+          I design modular systems that survive noise and wear.
+        </p>
+      </div>
+
+      <div class="text-block">
+        <h3>⚙️ Technical Rigor</h3>
+        <p>
+          Strong advocate of C++ and ROS 2 for production environments.
+        </p>
+      </div>
+
+      <div class="text-block">
+        <h3>🚀 Product Vision</h3>
+        <p>
+          From prototypes to real commercial robotics systems.
+        </p>
+      </div>
+
+      <div class="text-block education-block">
+
+        <h3>🎓 Education</h3>
+
+        <div class="edu-card">
+
+          <div class="edu-logo-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/URJC_logo.svg/1280px-URJC_logo.svg.png">
+          </div>
+
+          <div class="edu-info">
+            <h4>Robotics Software Engineering</h4>
+            <p>Universidad Rey Juan Carlos</p>
+            <span class="edu-status">2022 – 2026</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a class="btn-cv" href="assets/cv/Alvaro_Quintana_CV.pdf" target="_blank">
+        Download CV
+      </a>
+
+    </div>
+
+    <div class="about-visual-column">
+
+      <img src="assets/robotillo/hexa_llave.png"
+           class="floating-wrench-robot"
+           alt="Robot">
+
+    </div>
+
+  </div>
+
 </section>
+
+<!-- ================= PROJECTS ================= -->
+
 <section id="projects">
-<h2>Projects</h2>
-<div class="filter-container" id="filterContainer"></div>
-<div class="projects-grid" id="projectsGrid"></div>
+
+  <h2>Projects</h2>
+
+  <div id="filterContainer" class="filter-container"></div>
+
+  <div id="projectsGrid" class="projects-grid"></div>
+
 </section>
+
+<!-- ================= BLOG ================= -->
+
+<section id="blog">
+
+  <h2>Blog</h2>
+
+  <p class="section-subtitle">
+    Notes, write-ups, and lessons learned.
+  </p>
+
+  <!-- Empty state -->
+  <div id="blogEmpty" class="blog-empty">
+
+    <div class="blog-empty-card">
+      <h3>Coming soon</h3>
+      <p>
+        No posts yet. When you add entries to
+        <strong>blogs.js</strong>, they will appear here automatically.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Blog cards -->
+  <div id="blogList" class="blog-grid"></div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
 <section id="contact">
-<h2>Contact</h2>
-<div class="contact-icons">
-<a href="https://www.linkedin.com/in/aquintanc/" target="_blank"><i class="icon-linkedin"></i></a>
-<a href="mailto:aquintan@example.com"><i class="icon-mail"></i></a>
-<a href="https://github.com/aquintan4" target="_blank"><i class="icon-github"></i></a>
-</div>
+
+  <h2>Contact</h2>
+
+  <div class="contact-icons">
+
+    <a href="https://www.linkedin.com/in/aquintanc/" target="_blank">
+      <i class="icon-linkedin"></i>
+    </a>
+
+    <a href="mailto:aquintan@example.com">
+      <i class="icon-mail"></i>
+    </a>
+
+    <a href="https://github.com/aquintan4" target="_blank">
+      <i class="icon-github"></i>
+    </a>
+
+  </div>
+
 </section>
+
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
-<div class="footer-inner">
-<span>© <span id="year"></span> Álvaro Quintana</span>
-<div class="footer-links">
-<a href="#home">Back to top</a>
-</div>
-</div>
+
+  <div class="footer-inner">
+
+    <span>
+      © <span id="year"></span> Álvaro Quintana
+    </span>
+
+    <div class="footer-links">
+      <a href="#home">Back to top</a>
+    </div>
+
+  </div>
+
 </footer>
+
+<!-- ================= BLOG MODAL ================= -->
+
+<div id="blogModalOverlay" class="blog-modal-overlay">
+
+  <div id="blogModal"
+       class="blog-modal"
+       role="dialog"
+       aria-modal="true">
+
+    <button id="blogModalClose"
+            class="blog-modal-close"
+            aria-label="Close">
+      ✕
+    </button>
+
+    <div id="blogModalContent"
+         class="blog-modal-content"></div>
+
+  </div>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+
 <script src="projects.js"></script>
+<script src="blogs.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
