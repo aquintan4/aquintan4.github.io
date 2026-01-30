@@ -66,7 +66,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollInvite = document.querySelector('.scroll-invite');
     const robotHero = document.getElementById('hero-robot');
     const yearSpan = document.getElementById("year");
+    const headerEl = document.querySelector('header');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+
+    // --- 2.1 MENÚ MOBILE (hamburger) ---
+    if (navToggle && navLinks && headerEl) {
+        const setExpanded = (isOpen) => {
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        };
+
+        const closeMenu = () => {
+            headerEl.classList.remove('nav-open');
+            navToggle.classList.remove('is-open');
+            setExpanded(false);
+        };
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = headerEl.classList.toggle('nav-open');
+            navToggle.classList.toggle('is-open', isOpen);
+            setExpanded(isOpen);
+        });
+
+        // Cerrar al clicar un link (solo aplica cuando el menú está en modo overlay)
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => closeMenu());
+        });
+
+        // Cerrar si cambias a escritorio al redimensionar
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 820) closeMenu();
+        });
+    }
     // --- 3. RENDERIZADO DINÁMICO ---
 
     /**
