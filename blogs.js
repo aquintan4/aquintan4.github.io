@@ -14,7 +14,7 @@ const blogPosts = [
         variant: "info",
         title: "Context",
         text:
-          "This hexapod was developed for the Mechatronics course. The goal wasn’t just “make it walk”, but to go through the **end-to-end lifecycle of a robotic system."
+          "This hexapod was developed for the Mechatronics course. The goal wasn’t just “make it walk”, but to go through the end-to-end lifecycle of a robotic system."
       },
 
       { type: "h4", text: "Project Requirements and Constraints" },
