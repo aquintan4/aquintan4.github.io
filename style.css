@@ -8,7 +8,57 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Ubuntu", sans-serif; }
-body { background: var(--bg); color: white; overflow-x: hidden; }
+
+html, body {
+  height: 100%;
+}
+
+html {
+  background: var(--bg);
+}
+
+body { 
+  background: var(--bg); 
+  color: white; 
+  overflow-x: hidden; 
+  position: relative;
+  z-index: 0;              /* importante para que el pseudo-elemento se apile bien */
+  isolation: isolate;      /* evita bugs raros con z-index negativo */
+}
+
+/* --- FONDO DINÁMICO MEJORADO --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Gradiente radial con el amarillo del tema a baja opacidad (visible pero sutil) */
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 100% 0%, rgba(255, 193, 7, 0.035) 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(120, 180, 255, 0.025) 0%, transparent 50%);
+
+  background-size: 200% 200%;
+  animation: backgroundMove 20s ease-in-out infinite alternate;
+
+  z-index: -1;             /* antes era -2 (a veces no se ve) */
+  pointer-events: none;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Aseguramos que las secciones no tapen el fondo si tienen color sólido */
+section {
+  position: relative;
+  background: transparent !important;
+}
 
 /* HEADER */
 header {
@@ -16,6 +66,7 @@ header {
   background: #0b121a; display: flex; align-items: center;
   justify-content: space-between; padding: 0 60px; z-index: 100;
 }
+
 .nav-brand { display: flex; align-items: center; gap: 15px; }
 .brand-logo { 
   width: 44px; height: 44px; 
@@ -65,11 +116,24 @@ header {
 .hero-text h2 { font-size: 2rem; color: var(--text-dim); margin-bottom: 30px; }
 
 /* Botones y Robot debajo */
-.buttons { margin-bottom: 40px; }
+.buttons { 
+  margin-bottom: 40px; 
+  display: flex;       /* Usar flex para control total */
+  flex-wrap: wrap;     /* Permitir que bajen de línea si no caben */
+  gap: 15px;           /* Espacio uniforme entre ellos */
+}
+
 .cta { 
-  padding: 12px 24px; border: 1px solid var(--primary); color: var(--primary); 
-  text-decoration: none; font-weight: 700; border-radius: 8px; margin-right: 15px;
+  padding: 12px 24px; 
+  border: 1px solid var(--primary); 
+  color: var(--primary); 
+  text-decoration: none; 
+  font-weight: 700; 
+  border-radius: 8px; 
+  margin-right: 0;     /* Quitamos el margin-right viejo para usar gap */
   transition: 0.3s;
+  display: inline-block;
+  white-space: nowrap; /* Evita que el texto del botón se rompa */
 }
 .cta:hover { background: rgba(255, 193, 7, 0.1); }
 
@@ -425,6 +489,7 @@ header {
 
 /* RESPONSIVE */
 @media (max-width: 1000px) {
+  .buttons {justify-content: center;}
   .hero { flex-direction: column; text-align: center; height: auto; padding-bottom: 100px; }
   .hero-visual { display: none; }
   .hero-text { max-width: 100%; }
